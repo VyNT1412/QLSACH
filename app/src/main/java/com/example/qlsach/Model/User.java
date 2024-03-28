@@ -96,6 +96,18 @@ public class User {
         this.role_id = role_id;
     }
 
+    public User(String user_name, String password, String email, String full_name, String phone_number, String address, String date_of_birth, int gt, int role_id) {
+        this.user_name = user_name;
+        this.password = password;
+        this.email = email;
+        this.full_name = full_name;
+        this.phone_number = phone_number;
+        this.address = address;
+        this.date_of_birth = date_of_birth;
+        this.gt = gt;
+        this.role_id = role_id;
+    }
+
     private int gt;
     private int role_id;
 

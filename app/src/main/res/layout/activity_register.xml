@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a"
+    tools:context=".Activity.RegisterActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="ĐĂNG KÝ"
+        android:textColor="#172EAC"
+        android:textSize="50dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="60sp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Họ tên" />
+
+            <EditText
+                android:id="@+id/inputHoTenUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:layout_marginEnd="10sp"
+                android:background="@color/white"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txGT_User"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gioi tinh" />
+
+            <RadioGroup
+                android:id="@+id/GtUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:orientation="horizontal"
+                android:inputType="number"
+                android:layout_marginEnd="10sp"
+                android:text="Name" >
+
+                <RadioButton
+                    android:id="@+id/radioButtonNu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30sp"
+                    android:text="Nữ" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonNam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nam" />
+            </RadioGroup>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tên đăng nhập" />
+
+            <EditText
+                android:id="@+id/editUsername_DK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:background="@color/white"
+                android:layout_marginEnd="10sp"
+                android:inputType="text"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mật khẩu" />
+
+            <EditText
+                android:id="@+id/editMK_DK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:layout_marginEnd="10sp"
+                android:inputType="textPassword"
+                android:background="@color/white"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10sp"
+                android:layout_weight="1"
+                android:text="Nhập lại mật khẩu" />
+
+            <EditText
+                android:id="@+id/editConf_MK"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:background="@color/white"
+                android:inputType="textPassword"
+                android:layout_marginEnd="10sp"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Email" />
+
+            <EditText
+                android:id="@+id/inPutEmailKH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:background="@color/white"
+                android:layout_marginEnd="10sp"
+                android:text="" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Số điện thoại" />
+
+            <EditText
+                android:id="@+id/inPutPhoneKH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:background="@color/white"
+                android:inputType="number"
+                android:layout_marginEnd="10sp"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/txtNgaysinh"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ngày sinh" />
+
+            <EditText
+                android:id="@+id/inPutNgaySinhKH"
+                android:layout_width="100sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="datetime"
+                android:layout_marginRight="10sp"
+                android:background="@color/white"
+                android:hint="dd/MM/yyyy"
+                android:text="" />
+            <Button
+                android:id="@+id/buttonPickDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn Ngày" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/txtDiaChi"
+                android:layout_marginStart="10sp"
+                android:layout_width="50sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Địa chỉ" />
+
+            <EditText
+                android:id="@+id/inPutDiaChiKH"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:layout_marginEnd="10sp"
+                android:background="@color/white"
+                android:text="" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20sp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/buttonRegister"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đăng ký" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

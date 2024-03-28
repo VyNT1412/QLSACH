@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.NonNull;
@@ -26,6 +27,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     General.COLUMN_ID_User + " INTEGER PRIMARY KEY AUTOINCREMENT, " + General.COLUMN_Full_Name + " TEXT, " +
                     General.COLUMN_User_Name + " TEXT, " +
                     General.COLUMN_Password + " TEXT, " + General.COLUMN_Email + " TEXT, " + General.COLUMN_SDT + " TEXT, " + General.COLUMN_Role_User + " INTEGER, " + General.COLUMN_GT + " INTEGER, " + General.COLUMN_Date_Of_Birth + " TEXT, " + General.COLUMN_Address + " TEXT);";
+
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLE_CREATE_User);
@@ -70,5 +74,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return count > 0;
 
     }
+    public boolean checkUsername_Phone_Email(String username, String phone, String email) {
+        int count = 0;
+        SQLiteDatabase db = null;
+        Cursor cursor = null;
 
+        try {
+            db = this.getReadableDatabase();
+
+            // Chú ý khoảng trắng sau "OR"
+            String selection = General.COLUMN_User_Name + "=? OR " + General.COLUMN_SDT + "=? OR " + General.COLUMN_Email + "=?";
+            String[] selectionArgs = { username, phone, email };
+
+            cursor = db.query(General.TABLE_User, null, selection, selectionArgs, null, null, null);
+
+            count = cursor.getCount();
+        } catch (SQLiteException e) {
+            e.printStackTrace();
+        } finally {
+            if (cursor != null)
+                cursor.close();
+            if (db != null)
+                db.close();
+        }
+
+        return count > 0;
+    }
+    public int countUser() {
+        int count = 0;
+        SQLiteDatabase db  = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT COUNT(*) FROM "+ General.TABLE_User, null);
+        cursor.moveToFirst();
+        count = cursor.getInt(0);
+        cursor.close();
+        return count;
+    }
+    public int getLastUserId() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int lastUserId = -1;
+
+        Cursor cursor = db.rawQuery("SELECT " + General.COLUMN_ID_User + " FROM " + General.TABLE_User + " ORDER BY " + General.COLUMN_ID_User + " DESC LIMIT 1", null);
+        if (cursor != null && cursor.moveToFirst()) {
+            lastUserId = cursor.getInt(0);
+            cursor.close();
+        }
+
+        db.close();
+        return lastUserId;
+    }
 }
