@@ -49,6 +49,8 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         int dem = dbHelper.countUser();
                         Log.d("",Integer.toString(dem));
+                        Intent intent = new Intent(LoginActivity.this, HomePageActivity.class);
+                        startActivity(intent);
                     } else {
                         // Đăng nhập thất bại
                         Toast.makeText(LoginActivity.this, "Đăng nhập thất bại, vui lòng kiểm tra thông tin", Toast.LENGTH_SHORT).show();
